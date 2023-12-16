@@ -1,0 +1,7 @@
+sudo: required
+services:
+  - docker
+before_install:
+  - docker build -f Dockerfile.dev -t asethi06/docker-react .
+script:
+  - docker run sethi06/docker-react npm run test -- --coverage
