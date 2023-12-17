@@ -4,7 +4,7 @@ services:
 before_install:
   - docker build -f Dockerfile.dev -t asethi06/docker-react .
 script:
-  - docker run asethi06/docker-react npm run test -- --coverage
+  - docker run -e CI=true asethi06/docker-react npm run test -- --coverage
 deploy:
   provdier: elasticbeanstalk
   region: "ap-southeast-1"
